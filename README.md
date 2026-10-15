@@ -1,8 +1,9 @@
-# Latihan Git dan Unit Testing
+# Implementasi Pengujian Perangkat Lunak
 
 Nama: Ariya Narendra  
 NIM: 3224012
 
-Repository ini berisi latihan Git serta project Java untuk Tugas Pertemuan 4 tentang JUnit, GitHub Actions, dan code coverage.
+Repository ini berisi tugas mata kuliah Implementasi Pengujian Perangkat Lunak.
 
-Project Maven berada pada folder `Tugas/Tugas04`.
+- `Tugas/Tugas04`: JUnit, GitHub Actions, dan code coverage.
+- `Tugas/Tugas05`: Black-box Testing, Equivalence Partitioning, Boundary Value Analysis, dan API Testing.
