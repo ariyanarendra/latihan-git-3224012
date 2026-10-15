@@ -9,37 +9,30 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        assignment:
-          - name: tugas04
-            path: Tugas/Tugas04
-          - name: tugas05
-            path: Tugas/Tugas05
+    defaults:
+      run:
+        working-directory: Tugas/Tugas04
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Setup JDK 17
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
           cache: maven
-          cache-dependency-path: ${{ matrix.assignment.path }}/pom.xml
+          cache-dependency-path: Tugas/Tugas04/pom.xml
 
       - name: Run tests
         run: mvn test
-        working-directory: ${{ matrix.assignment.path }}
 
       - name: Generate coverage report
         run: mvn jacoco:report
-        working-directory: ${{ matrix.assignment.path }}
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
-          name: jacoco-report-${{ matrix.assignment.name }}
-          path: ${{ matrix.assignment.path }}/target/site/jacoco
+          name: jacoco-report
+          path: Tugas/Tugas04/target/site/jacoco
