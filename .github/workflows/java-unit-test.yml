@@ -39,7 +39,7 @@ jobs:
         working-directory: ${{ matrix.assignment.path }}
 
       - name: Upload coverage report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: jacoco-report-${{ matrix.assignment.name }}
           path: ${{ matrix.assignment.path }}/target/site/jacoco
